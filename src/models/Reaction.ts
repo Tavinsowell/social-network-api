@@ -1,17 +1,17 @@
-import { Schema, Document } from 'mongoose';
-import dateFormat from '../utils/dateFormat';
+import mongoose, { Schema, Document } from 'mongoose';
+import dateFormat from '../utils/dataFormat';
 
 export interface IReaction extends Document {
   reactionId: Schema.Types.ObjectId;
   reactionBody: string;
   username: string;
-  createdAt: Date;
+  createdAt: Date | string;
 }
 
 const reactionSchema = new Schema<IReaction>({
   reactionId: {
     type: Schema.Types.ObjectId,
-    default: () => new Schema.Types.ObjectId(),
+    default: () => new mongoose.Types.ObjectId(),
   },
   reactionBody: {
     type: String,
@@ -23,7 +23,7 @@ const reactionSchema = new Schema<IReaction>({
     required: true,
   },
   createdAt: {
-    type: Date,
+    type: Schema.Types.Date,
     default: Date.now,
     get: (timestamp: Date) => dateFormat(timestamp),
   },

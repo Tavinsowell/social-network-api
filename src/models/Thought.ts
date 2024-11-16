@@ -4,7 +4,7 @@ import reactionSchema, { IReaction } from './Reaction';
 
 interface IThought extends Document {
   thoughtText: string;
-  createdAt: Date;
+  createdAt: Date | string;
   username: string;
   reactions: IReaction[];
   reactionCount: number;

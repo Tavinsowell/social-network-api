@@ -11,15 +11,15 @@ export const getUsers = async (req: Request, res: Response) => {
   }
 };
 
-export const getSingleUser = async (req: Request, res: Response) => {
+export const getSingleUser = async (req: Request, res: Response): Promise<any> => {
   try {
     const user = await User.findOne({ _id: req.params.userId }).select('-__v');
     if (!user) {
       return res.status(404).json({ message: 'No user with that ID' });
     }
-    res.json(user);
+    return res.json(user);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 };
 
@@ -32,7 +32,7 @@ export const createUser = async (req: Request, res: Response) => {
   }
 };
 
-export const updateUser = async (req: Request, res: Response) => {
+export const updateUser = async (req: Request, res: Response) : Promise<any> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -48,9 +48,9 @@ export const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: Request, res: Response): Promise<any> => {
   try {
-    const user = await User.findOneAndRemove({ _id: req.params.userId });
+    const user = await User.findOneAndDelete({ _id: req.params.userId });
     if (!user) {
       return res.status(404).json({ message: 'No user with this id!' });
     }
@@ -61,7 +61,7 @@ export const deleteUser = async (req: Request, res: Response) => {
   }
 };
 
-export const addFriend = async (req: Request, res: Response) => {
+export const addFriend = async (req: Request, res: Response): Promise<any> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -77,7 +77,7 @@ export const addFriend = async (req: Request, res: Response) => {
   }
 };
 
-export const removeFriend = async (req: Request, res: Response) => {
+export const removeFriend = async (req: Request, res: Response): Promise<any> => {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
