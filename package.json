@@ -2,11 +2,10 @@
   "name": "social-network-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "npm run build && node dist/server.js",
+    "start": "npm run build && node dist/index.js",
     "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node dist/seeds/index.js"
@@ -24,6 +23,7 @@
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^22.9.0",
+    "express": "^4.21.1",
     "typescript": "^5.6.3"
   }
 }
