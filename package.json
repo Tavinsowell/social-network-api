@@ -1,0 +1,29 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build && node dist/server.js",
+    "dev": "npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node dist/seeds/index.js"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,json,js",
+    "exec": "npx tsc && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Tavin Sowell",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  }
+}
