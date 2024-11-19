@@ -1,11 +1,11 @@
 // Import the database connection
-import db from "../config/connection";
+import db from "../config/connection.js";
 
 // Import the User and Thought models
-import { User, Thought } from "../models/index";
+import { User, Thought } from "../models/index.js";
 
 // Import the user and thought seed data
-import { userSeeds, thoughtSeeds } from "./seed";
+import { userSeeds, thoughtSeeds } from "./seed.js";
 
 // Function to seed the database
 const seedDatabase = async () => {

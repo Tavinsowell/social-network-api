@@ -2,9 +2,9 @@
 // Import the express library to create an Express application
 import express from "express";
 // Import the Database connection from the config folder
-import db from "./config/connection";
+import db from "./config/connection.js";
 // Import the routes from the routes folder
-import routes from "./routes/api/index";
+import routes from "./routes/api/index.js";
 
 
 await db();
