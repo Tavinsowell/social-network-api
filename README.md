@@ -102,6 +102,6 @@ npm run seed
 
 ## Walkthrough Video
 
-[Link to walkthrough video](#)
+[Link to walkthrough video](https://drive.google.com/file/d/1RpCS1jBjNWpUH1wtD7frk5oHqP6oEXyb/view?usp=sharing)
 ## Contributors
 Name: Tavin Sowell GitHub: [github.com/Tavinsowell](https://github.com/Tavinsowell)
